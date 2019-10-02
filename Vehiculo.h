@@ -12,24 +12,21 @@ private:
 	string marca;
 	string placa;
 	int anio;
-	string modelo;
 
 public:
-	Vehiculo(string, string, int, string);
+	Vehiculo(string, string, int);
 	Vehiculo();
 
 	void setMarca(string);
 	void setPlaca(string);
 	void setAnio(int);
-	void setModelo(string);
 
 	string getMarca();
 	string getPlaca();
 	int getAnio();
-	string getModelo();
 
 	virtual string toString();
-	~Vehiculo();
+	virtual~Vehiculo();
 };
 
 #endif // VEHICULO_H

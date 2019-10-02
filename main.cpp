@@ -1,10 +1,15 @@
+#include "ListaVehiculos.h"
 #include "Vehiculo.h"
 #include "Carro.h"
 #include "Moto.h"
 
-int main() {
+struct coleccion {
+	int cantidad;
+	float costo;
 
-	cout << "hola mundo";
+}carro, moto;
+
+int main() {
 
 	return 0;
 }
