@@ -4,10 +4,6 @@ ListaVehiculos::ListaVehiculos() {
 	Ppio = NULL;
 }
 
-void ListaVehiculos::agregar(Vehiculo* vehiculo) {
-	Ppio = new nodo(vehiculo, Ppio);
-
-}
 
 bool ListaVehiculos::eliminarInicio() {
 	if (Ppio == nullptr) {
@@ -21,33 +17,29 @@ bool ListaVehiculos::eliminarInicio() {
 	}
 }
 
-void ListaVehiculos::agregarFinal(Vehiculo* vehiculo) {
-	nodo* p = Ppio;
-	if (p == NULL) {
-		agregar(vehiculo);
+string ListaVehiculos::toString() {
+	string informe;
+	actual = Ppio;
+	while (actual != nullptr) {
+		informe += actual->toString();
+		actual = actual->getSig();
+	}
+	return informe;
+}
+
+void ListaVehiculos::agregarFinal(Vehiculo& vehiculo) {
+	actual = Ppio;
+	if (Ppio == nullptr) {
+		Ppio = new nodo(vehiculo, nullptr);
 	}
 	else {
-		nodo* aux = p->getSig();
-		while (aux != NULL) {
-			p = aux;
-			aux = p->getSig();
+		while (actual->getSig() != nullptr) {
+			actual = actual->getSig();
 		}
-		nodo* nuevo = new nodo(vehiculo, NULL);
-		p->setSig(nuevo);
+		actual->setSig(new nodo(vehiculo, nullptr));
 	}
 }
-string ListaVehiculos::toString()const {
-	stringstream s;
-	nodo* p = Ppio;
-	Vehiculo* aux;
-	while (p != NULL) {
-		aux = p->getObj();
-		s << aux->toString() << endl;
-		p = p->getSig();
 
-	}
-	return s.str();
-}
 
 ListaVehiculos::~ListaVehiculos() {
 

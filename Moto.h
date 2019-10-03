@@ -8,8 +8,10 @@ class Moto :public Vehiculo
 private:
 	float costo;
 	int hora;
+	float precio;
+
 public:
-	Moto(string, string, int, float, int);
+	Moto(string, string, int, float&, int&);
 	Moto();
 	void setCosto(float);
 	float getCosto();
@@ -17,7 +19,9 @@ public:
 	void setHora(int);
 	int getHora();
 
-	CalcularHora();
+	float CalcularHora(float&, int&);
+	void setCalcularHora(float);
+	float getCalcularHora();
 };
 
 #endif // MOTO_H

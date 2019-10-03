@@ -1,6 +1,6 @@
 #include "Moto.h"
 
-Moto::Moto(string ma, string pl, int an, float cos, int ho) :Vehiculo(ma, pl, an) {
+Moto::Moto(string ma, string pl, int an, float& cos, int& ho) :Vehiculo(ma, pl, an) {
 	costo = cos;
 	hora = ho;
 }
@@ -23,6 +23,13 @@ int Moto::getHora() {
 	return hora;
 }
 
-Moto::CalcularHora() {
+float Moto::CalcularHora(float& cos, int& ho) {
 	return costo * hora;
+}
+
+void Moto::setCalcularHora(float precio) {
+	Moto::precio = precio;
+}
+float Moto::getCalcularHora() {
+	return precio;
 }

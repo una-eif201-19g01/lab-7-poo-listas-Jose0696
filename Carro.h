@@ -7,9 +7,10 @@ class Carro :public Vehiculo {
 private:
 	float costo;
 	int dia;
+	float precio;
 
 public:
-	Carro(string, string, int, float, int);
+	Carro(string, string, int, float&, int&, float&);
 	Carro();
 
 	void setCosto(float);
@@ -18,7 +19,11 @@ public:
 	void setDia(int);
 	int getDia();
 
-	CalcularDia();
+	float CalcularDia(float&, int&, float&);
+	void setCalcularDia(float&);
+	float getCalcularDia();
+
+	string toString();
 };
 
 #endif // CARRO_H

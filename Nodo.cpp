@@ -1,16 +1,15 @@
 #include "nodo.h"
 
-nodo::nodo(Vehiculo* art, nodo* si) {
-	obj = art;
+nodo::nodo(Vehiculo& veh, nodo* si) {
+	vehiculo = veh;
 	sig = si;
 }
 nodo::nodo() {
-	obj = NULL;
-	sig = NULL;
+	sig = nullptr;
 }
 
-Vehiculo* nodo::getObj() {
-	return obj;
+Vehiculo& nodo::getVehiculo() {
+	return vehiculo;
 }
 nodo* nodo::getSig() {
 	return sig;
@@ -19,10 +18,14 @@ nodo* nodo::getSig() {
 void nodo::setSig(nodo* si) {
 	sig = si;
 }
-void nodo::setObj(Vehiculo* art) {
-	obj = art;
+void nodo::setVehiculo(Vehiculo& vehiculo) {
+	vehiculo = vehiculo;
 }
+
+string nodo::toString() {
+	return vehiculo.toString();
+}
+
 nodo::~nodo() {
-	delete obj;
-	delete sig;
+
 }

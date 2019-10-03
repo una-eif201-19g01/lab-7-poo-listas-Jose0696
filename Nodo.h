@@ -5,18 +5,18 @@
 class nodo
 {
 public:
-	nodo(Vehiculo*, nodo*);
+public:
+	nodo(Vehiculo& vehiculo, nodo* sig);
 	nodo();
-
-	Vehiculo* getObj();
+	Vehiculo& getVehiculo();
 	nodo* getSig();
-
-	void setSig(nodo*);
-	void setObj(Vehiculo*);
+	void setSig(nodo* sig);
+	void setVehiculo(Vehiculo& vehiculo);
+	string toString();
 	~nodo();
 
 private:
-	Vehiculo* obj;
+	Vehiculo vehiculo;
 	nodo* sig;
 };
 

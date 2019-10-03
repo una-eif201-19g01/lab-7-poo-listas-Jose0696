@@ -6,11 +6,11 @@
 class ListaVehiculos
 {
 public:
+public:
 	ListaVehiculos();
-	void agregar(Vehiculo*);
 	bool eliminarInicio();
-	string toString()const;
-	void agregarFinal(Vehiculo*);
+	string toString();
+	void agregarFinal(Vehiculo& vehiculo);
 	~ListaVehiculos();
 
 private:

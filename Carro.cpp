@@ -1,12 +1,14 @@
 #include "Carro.h"
 
-Carro::Carro(string ma, string pl, int an, float cos, int di) :Vehiculo(ma, pl, an) {
+Carro::Carro(string ma, string pl, int an, float& cos, int& di, float& pre) :Vehiculo(ma, pl, an) {
 	costo = cos;
 	dia = di;
+	precio = pre;
 }
 Carro::Carro() : Vehiculo("", "", 0) {
 	costo = 0;
 	dia = 0;
+	precio = 0;
 }
 
 void Carro::setCosto(float cos) {
@@ -23,6 +25,23 @@ int Carro::getDia() {
 	return dia;
 }
 
-Carro::CalcularDia() {
-	return costo * dia;
+float Carro::CalcularDia(float& cos, int& di, float& pre) {
+	float precio;
+	precio = costo * dia;
+	return precio;
+}
+
+void Carro::setCalcularDia(float& pre) {
+	precio = pre;
+}
+float Carro::getCalcularDia() {
+	return precio;
+}
+
+string Carro::toString() {
+	stringstream s;
+	s << Vehiculo::toString() << endl;
+	s << "El precio del carro es de:---" << getCalcularDia() << endl;
+	return s.str();
+
 }
